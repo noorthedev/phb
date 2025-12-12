@@ -1,41 +1,68 @@
-# Website
+## Humanoid Robotics Documentation + RAG Chatbot (Robo-Doc)
+This project provides a complete documentation website for Humanoid Robotics, built using Docusaurus, combined with an intelligent RAG (Retrieval-Augmented Generation) Chatbot named Robo-Doc.
+Robo-Doc answers technical questions strictly from your project’s documents using LangChain, FAISS, and OpenAI embeddings.
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+## Contents
+Overview
+Project Structure
+Requirements
+Python RAG Setup
+Creating the FAISS Index
+Running the RAG Chatbot
+Integrating Chatbot with Docusaurus
+System Prompt (Chatbot Behavior)
+Troubleshooting
+License
 
-## Installation
+## Overview
 
-```bash
-yarn
-```
+This project combines:
+Docusaurus for documentation website
+Python RAG pipeline for question-answering
+Robo-Doc: An AI assistant that answers questions only from your custom dataset
+FAISS vector index for fast document retrieval
+OpenAI embeddings for semantic search
+LangChain (latest version) modules
 
-## Local Development
+## Requirements
+Node Requirements (for Docusaurus)
+Node.js >= 18
+npm >= 9
 
-```bash
-yarn start
-```
+## Python Requirements
+Python 3.10 or higher
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-## Build
+## Integrating Chatbot with Docusaurus
+You can embed the chatbot into your website using:
+iframe
+REST API (FastAPI backend)
+Custom React component
+API calls to the RAG backend
 
-```bash
-yarn build
-```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## System Prompt (Robo-Doc Behavior)
 
-## Deployment
+Robo-Doc uses the following system rules:
+**You are an expert Q&A assistant for a Humanoid Robotics project.**
+**Your name is "Robo-Doc".** 
+**You answer strictly from the provided document context.**
 
-Using SSH:
+**If context does not contain the answer:**
+**"I do not have enough information in my knowledge base to answer that question."**
 
-```bash
-USE_SSH=true yarn deploy
-```
+**Do not use external knowledge.
+Do not guess.
+Cite the source document when possible.**
 
-Not using SSH:
+## License
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+This project is for academic and research use.
+You may modify and extend it according to your requirements.
+If you want, I can also generate:
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+**requirements.txt
+ Example data files
+ Full FastAPI backend
+ Docusaurus chat widget
+ Deployment instructions (Vercel / Netlify + Python server)**
